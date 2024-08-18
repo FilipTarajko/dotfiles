@@ -47,4 +47,4 @@ bluetooth &
 #discord &
 
 # start redshift
-redshift &
+redshift-gtk &
