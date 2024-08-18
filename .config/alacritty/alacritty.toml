@@ -1,0 +1,53 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+import = [
+####################################################
+## SET THEME: Choose ONE color scheme from  list. ##
+## #################################################
+# Available themes are:
+
+  # /home/jilquero/.config/alacritty/colorschemes/DoomOne.yml
+  "/home/jilquero/.config/alacritty/colorschemes/Dracula.toml",
+  # /home/jilquero/.config/alacritty/colorschemes/GruvboxDark.yml
+  # /home/jilquero/.config/alacritty/colorschemes/MonokaiPro.yml
+  # /home/jilquero/.config/alacritty/colorschemes/Nord.yml
+  # /home/jilquero/.config/alacritty/colorschemes/OceanicNext.yml
+  # /home/jilquero/.config/alacritty/colorschemes/Palenight.yml
+  # /home/jilquero/.config/alacritty/colorschemes/SolarizedLight.yml
+  # /home/jilquero/.config/alacritty/colorschemes/SolarizedDark.yml
+  # /home/jilquero/.config/alacritty/colorschemes/TomorrowNight.yml
+  # /home/jilquero/.config/alacritty/colorschemes/Default.yml
+
+
+###########################################
+## SET FONT: Choose ONE font from  list. ##
+## ########################################
+# Available fonts are:
+
+  # /home/jilquero/.config/alacritty/fonts/SourceCodePro.yml
+  # /home/jilquero/.config/alacritty/fonts/CodeNewRoman.yml #Nerd Font
+  # /home/jilquero/.config/alacritty/fonts/RobotoMono.yml #Nerd Font
+  # /home/jilquero/.config/alacritty/fonts/Hack.yml
+  "/home/jilquero/.config/alacritty/fonts/JetBrainsMono.toml",
+  # /home/jilquero/.config/alacritty/fonts/UbuntuMono.yml #Nerd Font
+  # /home/jilquero/.config/alacritty/fonts/Monofur.yml #Nerd Font
+  # /home/jilquero/.config/alacritty/fonts/TerminessTTF.yml #Nerd Font
+  # /home/jilquero/.config/alacritty/fonts/Mononoki.yml #Nerd Font
+
+
+#############################################################
+## SET KEYBINDINGS: Choose ONE keybindings set from  list. ##
+## ##########################################################
+# Available fonts are:
+
+  "/home/jilquero/.config/alacritty/keybindings/Default.toml",
+  # /home/jilquero/.config/alacritty/keybindings/Vi.yml
+
+
+########################################################
+## SET SETTINGS: Choose ONE settings file from  list. ##
+## #####################################################
+# Available fonts are:
+
+  "/home/jilquero/.config/alacritty/settings/settings.toml"
+]
