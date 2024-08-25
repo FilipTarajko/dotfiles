@@ -41,8 +41,9 @@ super + a ; {w,e,f,g,v,s,c,d,b}
 
 # Rofi
 
-super + shift + {g,d,s}
-    rofi -show {window,drun,run}
+ # ,s - ,run
+super + shift + {g,d}
+    rofi -show {window,drun}
 
 # super + d ;
 # d     ->  Scripts menu
@@ -64,6 +65,9 @@ super + d ; {c,t}
     flameshot {full, screen} {-c, }
 
 Print
+    flameshot gui
+
+super + shift + s
     flameshot gui
 
 # Reload sxhkd
