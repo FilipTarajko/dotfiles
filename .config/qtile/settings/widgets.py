@@ -5,6 +5,7 @@ from scripts import storage
 import subprocess
 import socket
 import os
+from .spotify import Spotify
 
 myTerm = "alacritty"        # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
@@ -140,9 +141,11 @@ def init_widgets_list():
         #     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
         #         myTerm + ' -e sudo pacman -Syu')},
         # ),
+        Spotify(),
         widget.WidgetBox(
             background=colors[1],
             widgets=[
+                init_separator(),
                 widget.WindowName(
                     background=colors[1],
                     foreground=colors[2],
