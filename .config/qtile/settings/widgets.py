@@ -219,7 +219,12 @@ def init_widgets_list():
         widget.Clock(
             format='%Y-%m-%d   %H:%M',
             foreground=colors[2],
-            background=colors[1]
+            background=colors[1],
+            mouse_callbacks={
+                "Button1": lambda: qtile.cmd_spawn("vivaldi \"https://calendar.google.com/calendar/\""),
+                "Button2": lambda: qtile.cmd_spawn("vivaldi --new-window \"https://calendar.google.com/calendar/\""),
+                "Button3": lambda: qtile.cmd_spawn("vivaldi --new-window \"https://calendar.google.com/calendar/\""),
+            }
         ),
         # init_separator(),
         # nerd_icon(
