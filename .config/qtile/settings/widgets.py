@@ -6,7 +6,6 @@ import subprocess
 import socket
 import os
 
-
 myTerm = "alacritty"        # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
 
@@ -203,31 +202,26 @@ def init_widgets_list():
             length=bar.STRETCH,
             background=colors[1]
         ),
-        # widget.Battery(
-        #     font="Noto Sans",
-        #     update_interval = 10,
-        #     fontsize = 12,
-        #     foreground = colors[2],
-        #     background = colors[1],
-        # ),
-        # init_separator(),
+        widget.Battery(
+            background=colors[1],
+            foreground=colors[2],
+            notify_below=0.9,
+            low_percentage=0.9,
+        ),
+        init_separator(),
         nerd_icon(
             "",
             colors[7]
         ),
         widget.Clock(
-            format='%Y-%m-%d %H:%M',
+            format='%Y-%m-%d   %H:%M',
             foreground=colors[2],
             background=colors[1]
         ),
+        # init_separator(),
         # nerd_icon(
         #     "",
         #     colors[8]
-        # ),
-        # widget.Clock(
-        #     format='%H:%M %p',
-        #     foreground=colors[2],
-        #     background=colors[1]
         # ),
         init_edge_spacer()
     ]
