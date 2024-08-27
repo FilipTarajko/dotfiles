@@ -55,10 +55,10 @@ super + shift + {g,d}
 # t     ->  Translator
 
 super + d ; {d,q,e,x,Print}
-    {rofi-scripts,rofi-links,rofi-configs,rofi-power,rofi-ss}
+    $HOME/dotfiles/.config/rofi/{rofi-scripts,rofi-links,rofi-configs,rofi-power,rofi-ss}
 
 super + d ; {c,t}
-    rofi -show x -modi x:{rofi-calc,rofi-translate} -theme-str 'listview\{lines:0;\}'
+    rofi -show x -modi x:{$HOME/dotfiles/.config/rofi/rofi-calc,$HOME/dotfiles/.config/rofi/rofi-translate} -theme-str 'listview\{lines:0;\}'
 
 # Screenshot
 {ctrl,super} + {_,shift} + Print
