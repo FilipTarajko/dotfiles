@@ -7,9 +7,6 @@ import socket
 import os
 from .spotify import Spotify
 
-myTerm = "alacritty"        # My terminal of choice
-myBrowser = "firefox"       # My browser of choice
-
 def generate_current_screen_indicator(is_on_left=False):
     active_text = "\\\\\\\\\\"
     inactive_text = "/////"
@@ -61,6 +58,7 @@ def init_edge_spacer():
 widget_defaults = init_widgets_defaults()
 extension_defaults = widget_defaults.copy()
 
+
 def maybe_show_systray(should_show):
     if should_show:
         return [
@@ -72,91 +70,10 @@ def maybe_show_systray(should_show):
         ]
     return []
 
+
 def init_widgets_list(screen_number):
     widgets_list = [
         init_edge_spacer(),
-        # widget.Image(
-        #     filename="~/.config/qtile/icons/python.png",
-        #     background=colors[1],
-        #     margin=3,
-        #     mouse_callbacks={
-        #         'Button1': lambda: qtile.cmd_spawn(
-        #             'j4-dmenu'
-        #         ),
-        #         'Button3': lambda: qtile.cmd_spawn(
-        #             f'{myTerm} -e vim {home_dir}/.config/qtile/config.py'
-        #         )
-        #     }
-        # ),
-
-        # nerd_icon(
-        #     "﬙",
-        #     colors[3]
-        # ),
-        # widget.CPU(
-        #     format="{load_percent}%",
-        #     foreground=colors[2],
-        #     background=colors[1],
-        #     update_interval=60,
-        #     mouse_callbacks={
-        #         'Button1': lambda: qtile.cmd_spawn(f"{myTerm} -e btop")
-        #     }
-        # ),
-        # nerd_icon(
-        #     "",
-        #     colors[4]
-        # ),
-        # widget.Memory(
-        #     measure_mem='G',
-        #     format="{MemUsed:.0f}{mm}",
-        #     foreground=colors[2],
-        #     background=colors[1],
-        #     update_interval=60,
-        #     mouse_callbacks={
-        #         'Button1': lambda: qtile.cmd_spawn(f"{myTerm} -e btop")
-        #     }
-        # ),
-        # nerd_icon(
-        #     "",
-        #     colors[6]
-        # ),
-        # widget.GenPollText(
-        #     foreground=colors[2],
-        #     background=colors[1],
-        #     update_interval=5,
-        #     func=lambda: storage.diskspace('FreeSpace'),
-        #     mouse_callbacks={
-        #         'Button1': lambda: qtile.cmd_spawn(f"{myTerm} -e btop")
-        #     }
-        # ),
-        # init_separator(),
-        # nerd_icon(
-        #     "",
-        #     colors[4]
-        # ),
-        # widget.Net(
-        #     format="{down} ↓↑ {up}",
-        #     foreground=colors[2],
-        #     background=colors[1],
-        #     update_interval=30,
-        #     mouse_callbacks={
-        #         'Button1': lambda: qtile.cmd_spawn("def-nmdmenu")
-        #     }
-        # ),
-        # init_separator(),
-        # nerd_icon(
-        #     "",
-        #     colors[4]
-        # ),
-        # widget.GenPollText(
-        #     foreground=colors[2],
-        #     background=colors[1],
-        #     update_interval=5,
-        #     func=lambda: subprocess.check_output(
-        #         f"{home_dir}/.config/qtile/scripts/num-installed-pkgs").decode("utf-8"),
-        #     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(
-        #         myTerm + ' -e sudo pacman -Syu')},
-        # ),
         Spotify(),
         widget.WidgetBox(
             background=colors[1],
@@ -179,7 +96,6 @@ def init_widgets_list(screen_number):
             background=colors[1]
         ),
         generate_current_screen_indicator(),
-
         widget.GroupBox(
             font="Font Awesome",
             fontsize=15,
@@ -196,7 +112,6 @@ def init_widgets_list(screen_number):
             "",
             colors[7]
         ),
-        # widget.CurrentLayoutIcon(),
         widget.CurrentLayout(
             foreground=colors[2],
             background=colors[1]
@@ -211,8 +126,6 @@ def init_widgets_list(screen_number):
             background=colors[1]
         ),
         *maybe_show_systray(screen_number>0),
-        # Center bar
-        # Left Side of the bar
         generate_current_screen_indicator(True),
         widget.Spacer(
             length=bar.STRETCH,
@@ -239,11 +152,6 @@ def init_widgets_list(screen_number):
                 "Button3": lambda: qtile.cmd_spawn("vivaldi --new-window \"https://calendar.google.com/calendar/\""),
             }
         ),
-        # init_separator(),
-        # nerd_icon(
-        #     "",
-        #     colors[8]
-        # ),
         init_edge_spacer()
     ]
     return widgets_list

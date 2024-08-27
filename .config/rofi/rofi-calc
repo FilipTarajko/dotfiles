@@ -16,7 +16,7 @@ function main {
     if [[ ! -z "$output" ]]; then
         echo -en "\0message\x1f$output\n"
     else
-        echo -en "\0message\x1fOOF NIE DZIAŁA I CHUJ WIE CZEMU\n"
+        echo -en "\0message\x1fSomething went wrong\n"
     fi
 }
 
