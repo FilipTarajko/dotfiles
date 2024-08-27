@@ -52,6 +52,12 @@ class Spotify(base.ThreadPoolText):
         self.add_callbacks(
             {
                 "Button1": self.toggle_music,
+                # Previous track on middle click or scroll up
+                "Button2": self.previous_track,
+                "Button4": self.previous_track,
+                # Next track on right click or scroll down
+                "Button3": self.next_track,
+                "Button5": self.next_track,
             }
         )
 
@@ -121,6 +127,20 @@ class Spotify(base.ThreadPoolText):
         cmd = """
         dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
         /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+        """
+        run(cmd, shell=True)
+
+    def previous_track(self) -> None:
+        cmd = """
+        dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+        """
+        run(cmd, shell=True)
+
+    def next_track(self) -> None:
+        cmd = """
+        dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
         """
         run(cmd, shell=True)
 
