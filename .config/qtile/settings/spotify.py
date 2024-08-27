@@ -1,3 +1,6 @@
+# Content of this file is adapted from
+# https://github.com/BenGH28/qtile-spotify-widget
+
 # The MIT License (MIT)
 
 # Copyright(c) 2022 Ben Hunt

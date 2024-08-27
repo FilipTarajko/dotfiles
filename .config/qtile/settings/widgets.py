@@ -33,7 +33,8 @@ def init_separator():
         padding=12,
         linewidth=3,
         background=colors[1],
-        foreground="#444444")
+        foreground="#444444"
+    )
 
 
 def nerd_icon(nerdfont_icon, fg_color):
@@ -66,7 +67,7 @@ def maybe_show_systray(should_show):
         ]
     return []
 
-def init_widgets_list(is_primary = True):
+def init_widgets_list(screen_number):
     widgets_list = [
         init_edge_spacer(),
         # widget.Image(
@@ -159,12 +160,14 @@ def init_widgets_list(is_primary = True):
                 widget.WindowName(
                     background=colors[1],
                     foreground=colors[2],
-                    fontsize=14
+                    fontsize=14,
+                    for_current_screen=True,
                 ),
             ],
             fontsize=14,
             text_open = "",
             text_closed = "",
+            name=(f"widgetbox{screen_number}")
         ),
         widget.Spacer(
             length=bar.STRETCH,
@@ -202,7 +205,7 @@ def init_widgets_list(is_primary = True):
             foreground=colors[2],
             background=colors[1]
         ),
-        *maybe_show_systray(is_primary),
+        *maybe_show_systray(screen_number>0),
         # Center bar
         # Left Side of the bar
         generate_current_screen_indicator(),
@@ -241,9 +244,9 @@ def init_widgets_list(is_primary = True):
     return widgets_list
 
 
-def init_primary_widgets():
-    return init_widgets_list(True)
+def init_primary_widgets(screen_number):
+    return init_widgets_list(screen_number)
 
 
-def init_secondary_widgets():
-    return init_widgets_list(False)
+def init_secondary_widgets(screen_number):
+    return init_widgets_list(screen_number)
