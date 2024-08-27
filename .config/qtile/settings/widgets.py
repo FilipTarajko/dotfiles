@@ -55,8 +55,18 @@ def init_edge_spacer():
 widget_defaults = init_widgets_defaults()
 extension_defaults = widget_defaults.copy()
 
+def maybe_show_systray(should_show):
+    if should_show:
+        return [
+            init_separator(),
+            widget.Systray(
+                background=colors[1],
+                padding=8
+            )
+        ]
+    return []
 
-def init_widgets_list():
+def init_widgets_list(is_primary = True):
     widgets_list = [
         init_edge_spacer(),
         # widget.Image(
@@ -192,12 +202,7 @@ def init_widgets_list():
             foreground=colors[2],
             background=colors[1]
         ),
-        init_separator(),
-        widget.Systray(
-            background=colors[1],
-            padding=8
-        ),
-
+        *maybe_show_systray(is_primary),
         # Center bar
         # Left Side of the bar
         generate_current_screen_indicator(),
@@ -237,12 +242,8 @@ def init_widgets_list():
 
 
 def init_primary_widgets():
-    primary_widgets = init_widgets_list()
-    return primary_widgets
+    return init_widgets_list(True)
 
 
 def init_secondary_widgets():
-    secondary_widgets = init_widgets_list()
-    del secondary_widgets[-6]
-    del secondary_widgets[-6]
-    return secondary_widgets
+    return init_widgets_list(False)
