@@ -10,14 +10,19 @@ from .spotify import Spotify
 myTerm = "alacritty"        # My terminal of choice
 myBrowser = "firefox"       # My browser of choice
 
-def generate_current_screen_indicator():
+def generate_current_screen_indicator(is_on_left=False):
+    active_text = "\\\\\\\\\\"
+    inactive_text = "/////"
+    if is_on_left:
+        [active_text, inactive_text] = [inactive_text, active_text]
     return widget.CurrentScreen(
-            active_color=colors[10],
-            inactive_color=colors[1],
-            active_text="||||||||||||||",
-            inactive_text="   ",
+            active_color=colors[4],
+            inactive_color=colors[3],
+            active_text=active_text,
+            inactive_text=inactive_text,
             background=colors[1],
-            fontsize=20
+            fontsize=20,
+            padding=12,
         )
 
 def init_widgets_defaults():
@@ -208,7 +213,7 @@ def init_widgets_list(screen_number):
         *maybe_show_systray(screen_number>0),
         # Center bar
         # Left Side of the bar
-        generate_current_screen_indicator(),
+        generate_current_screen_indicator(True),
         widget.Spacer(
             length=bar.STRETCH,
             background=colors[1]
