@@ -1,36 +1,25 @@
 import os
 from libqtile import bar
 from libqtile.config import Screen
-from .widgets import init_primary_widgets
-from .widgets import init_secondary_widgets
+from .widgets import init_widgets_list
 
 size = 25
 opacity = 0.9
 margin = [2, 2, -1, 2]
 
-def init_screens():
-    screens = [
-        Screen(
-            top=bar.Bar(
-                widgets=init_primary_widgets(0),
-                size=size,
-                opacity=opacity,
-                margin=margin
-            )
-        )
-    ]
+primary_screen_number = 0
 
+def init_screens():
     connected_monitors = len(os.popen(
         "xrandr --listmonitors | grep '+' | awk {'print $4'}").read().splitlines())
 
-    if connected_monitors == 1:
-        return screens
+    screens = []
 
-    for i in range(1, connected_monitors):
+    for i in range(0, connected_monitors):
         screens.append(
             Screen(
                 top=bar.Bar(
-                    widgets=init_secondary_widgets(i),
+                    widgets=init_widgets_list(i == primary_screen_number),
                     size=size,
                     opacity=opacity,
                     margin=margin

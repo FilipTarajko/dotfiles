@@ -71,7 +71,7 @@ def maybe_show_systray(should_show):
     return []
 
 
-def init_widgets_list(screen_number):
+def init_widgets_list(is_primary):
     widgets_list = [
         init_edge_spacer(),
         Spotify(),
@@ -88,8 +88,7 @@ def init_widgets_list(screen_number):
             ],
             fontsize=14,
             text_open = "",
-            text_closed = "",
-            name=(f"widgetbox{screen_number}")
+            text_closed = ""
         ),
         widget.Spacer(
             length=bar.STRETCH,
@@ -125,7 +124,7 @@ def init_widgets_list(screen_number):
             foreground=colors[2],
             background=colors[1]
         ),
-        *maybe_show_systray(screen_number>0),
+        *maybe_show_systray(is_primary),
         generate_current_screen_indicator(True),
         widget.Spacer(
             length=bar.STRETCH,
@@ -155,11 +154,3 @@ def init_widgets_list(screen_number):
         init_edge_spacer()
     ]
     return widgets_list
-
-
-def init_primary_widgets(screen_number):
-    return init_widgets_list(screen_number)
-
-
-def init_secondary_widgets(screen_number):
-    return init_widgets_list(screen_number)
