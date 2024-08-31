@@ -60,6 +60,9 @@ super + d ; {d,q,e,x,Print}
 super + d ; {c,t}
     rofi -show x -modi x:{$HOME/dotfiles/.config/rofi/rofi-calc,$HOME/dotfiles/.config/rofi/rofi-translate} -theme-str 'listview\{lines:0;\}'
 
+super + d ; l
+    pkill -KILL -u "$USER"
+
 # Screenshot
 {ctrl,super} + {_,shift} + Print
     flameshot {full, screen} {-c, }
