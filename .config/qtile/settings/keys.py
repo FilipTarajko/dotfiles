@@ -7,7 +7,7 @@ mod = "mod4"
 
 keys = [
     # MINE - Toggle widgetbox
-    Key([mod, "shift"], "w", lazy.widget["widgetbox0"].toggle()),
+    Key([mod, "shift"], "w", lazy.widget["widgetbox"].toggle()),
 
     # MINE - Switch between screens
     Key([mod, "shift", "control"], "Up", lazy.next_screen()),
