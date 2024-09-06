@@ -66,7 +66,20 @@ def maybe_show_systray(should_show):
             widget.Systray(
                 background=colors[1],
                 padding=8
-            )
+            ),
+        ]
+    return []
+
+def maybe_show_battery():
+    if os.environ.get('QTILE_DEVICE_TYPE', 'DESKTOP') == 'LAPTOP':
+        return [
+            widget.Battery(
+                background=colors[1],
+                foreground=colors[2],
+                notify_below=0.4,
+                low_percentage=0.7,
+            ),
+            init_separator()
         ]
     return []
 
@@ -130,13 +143,7 @@ def init_widgets_list(is_primary):
             length=bar.STRETCH,
             background=colors[1]
         ),
-        widget.Battery(
-            background=colors[1],
-            foreground=colors[2],
-            notify_below=0.9,
-            low_percentage=0.9,
-        ),
-        init_separator(),
+        *maybe_show_battery(),
         nerd_icon(
             "",
             colors[7]
