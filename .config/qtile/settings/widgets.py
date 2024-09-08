@@ -6,6 +6,7 @@ import subprocess
 import socket
 import os
 from .spotify import Spotify
+import psutil
 
 def generate_current_screen_indicator(is_on_left=False):
     active_text = "\\\\\\\\\\"
@@ -71,7 +72,7 @@ def maybe_show_systray(should_show):
     return []
 
 def maybe_show_battery():
-    if os.environ.get('QTILE_DEVICE_TYPE', 'DESKTOP') == 'LAPTOP':
+    if psutil.sensors_battery():
         return [
             widget.Battery(
                 background=colors[1],
