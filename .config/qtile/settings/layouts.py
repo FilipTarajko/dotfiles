@@ -6,7 +6,7 @@ from .theme import colors
 
 def init_layout_theme():
     return {"border_width": 3,
-            "margin": 15,
+            "margin": [4, 2, 4, 2],
             "font": "Source Code Pro Medium",
             "font_size": 10,
             "border_focus": "#bd93f9",
