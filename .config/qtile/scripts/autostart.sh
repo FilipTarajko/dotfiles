@@ -28,7 +28,7 @@ sxhkd &
 picom &
 
 # start volumeicon
-volumeicon &
+# volumeicon &
 
 # start nm-applet
 nm-applet &
