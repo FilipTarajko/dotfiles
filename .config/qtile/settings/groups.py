@@ -8,7 +8,7 @@ groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-group_labels = ["", "", "", "", "", "", "7", "", "", "0"]
+group_labels = ["", "", "", "", "", "", "", "", "9", "0"]
 
 group_layouts = ["columns", "columns", "columns", "columns", "columns", "columns", "columns", "columns", "columns", "columns"]
 
@@ -48,18 +48,20 @@ for i in groups:
 def assign_app_group(client):
     d = {}
 
-    # assign deez apps
-
-    # d[group_names[0]] = ['Navigator', 'brave-browser',
-    #                      'midori', 'qutebrowser', 'firefox']
-    # d[group_names[1]] = ['code-oss', 'code', 'geany']
-    # d[group_names[2]] = []  # ['pcmanfm', 'thunar']
-    # d[group_names[3]] = ['gimp']  # ['Alacritty', 'xfce4-terminal']
-    # d[group_names[4]] = ['vlc', 'obs', 'mpv', 'mplayer', 'lxmusic']
-    # d[group_names[5]] = ['spotify', 'cmus']
-    # d[group_names[6]] = ['caprine', 'discord']
-    # d[group_names[7]] = ['lxappearance', 'gpartedbin', 'lxtask',
-    #                      'lxrandr', 'arandr', 'pavucontrol', 'xfce4-settings-manager']
+    # browsers
+    d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser", "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser"]
+    # code editors
+    d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord", "atom", "subl", "geany", "brackets", "code-oss", "code", "nvim", "vim", "vscodium" ]
+    # anki
+    d[group_names[2]] = ['anki']
+    # notes (obsidian)
+    d[group_names[3]] = ['obsidian']
+    # music
+    d[group_names[4]] = ['spotify']
+    # video
+    d[group_names[5]] = ['vlc', 'obs', 'mpv', 'mplayer', 'lxmusic']
+    # files/thunar
+    d[group_names[6]] = ['thunar']
 
     wm_class = client.window.get_wm_class()[0]
     for i in range(len(d)):

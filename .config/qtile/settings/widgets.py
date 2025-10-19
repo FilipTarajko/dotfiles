@@ -131,7 +131,7 @@ def init_widgets_list(is_primary):
         ),
         init_separator(),
         nerd_icon(
-            "墳",
+            "󰕾",
             colors[7]
         ),
         widget.Volume(
