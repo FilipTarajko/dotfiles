@@ -12,32 +12,24 @@ super + Return
 super + shift + Return
     thunar
 
-# super +
-# F1    ->  Vivaldi-stable
-# F2    ->  VSCode
-# F3    ->  Thunar
-# F4    ->  Gimp
-# F5    ->  Vlc
-# F6    ->  Spotify
-# F7    ->  Caprine & Discord
-# F8    ->  Virtualbox
+# super+Fn
+# eg: super + F1 -> Vivaldi-stable
 
 super + {F1,F2,F3,F4,F5,F6,F7,F8}
-    {vivaldi-stable,code,thunar,gimp,vlc --cideo-on-top,spotify,caprine;discord,virtualbox}
+    {vivaldi-stable,nvim,anki,obsidian,spotify,vlc --cideo-on-top,thunar}
 
-# super + a ;
-# w     ->  Vivaldi-stable
-# e     ->  VSCode
-# f     ->  Thunar
-# g     ->  Gimp
-# v     ->  Vlc
-# s     ->  Spotify
-# c     ->  Caprine
-# d     ->  Discord
-# b     ->  Virtualbox
+# super + a ; sth
+# eg: super + a ; w -> Vivaldi-stable
 
-super + a ; {w,e,f,g,v,s,c,d,b}
-    {vivaldi-stable,code,thunar,gimp,vlc --cideo-on-top,spotify,caprine,discord,virtualbox}
+super + a ; {w,c,k,p,l,s,v,d,t,a,o,t,f}
+    {vivaldi-stable,codium,krita,pinta,vlc --cideo-on-top,spotify,nvim,discord,thunar,anki,obsidian,alacritty}
+
+# super + s + a/s/d
+# for spotify prev/playpause/next
+super + s ; {a,s,d}
+    {dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous, \
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause, \
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next}
 
 # Rofi
 
