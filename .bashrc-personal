@@ -1,1 +1,1 @@
-alias v="NVIM_APPNAME=lazyvim nvim" # to set it up: git clone https://github.com/LazyVim/starter ~/.config/lazyvim
+alias v="nvim" # to set it up: git clone https://github.com/LazyVim/starter ~/.config/lazyvim
