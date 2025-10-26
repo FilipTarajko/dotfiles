@@ -53,7 +53,7 @@ def assign_app_group(client):
     # code editors
     d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord", "atom", "subl", "geany", "brackets", "code-oss", "code", "nvim", "vim", "vscodium" ]
     # anki
-    d[group_names[2]] = ['anki']
+    # d[group_names[2]] = ['anki']
     # notes (obsidian)
     d[group_names[3]] = ['obsidian']
     # music
