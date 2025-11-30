@@ -48,3 +48,5 @@ bluetooth &
 
 # start redshift
 redshift-gtk &
+
+setxkbmap -option caps:escape
